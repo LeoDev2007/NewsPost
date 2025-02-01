@@ -1,0 +1,388 @@
+:root{
+    --Inika: 'Inika', serif;
+    --Jaini: 'Jaini', sans-serif;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 16px;
+}
+
+body{
+    height: 100%;
+    
+}
+
+span{
+    color: #0E219E;
+}
+
+main{
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    grid-template-rows: repeat(5, auto);
+    gap: 1rem;
+    grid-template-areas: 
+        "header header"
+        "mainNews mainNews"
+        "mostRead mostRead"
+        "recommended recommended"
+        "footer footer";
+    ;
+    padding-top: 4rem;
+}
+
+/* Menu Do Site */
+
+header{
+    padding: 1rem;
+    border-bottom: 1px solid #ccc;
+    background-color: #0E219E;
+    color: #fff;
+    grid-area: header;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+
+}
+
+header h2{
+    font-family: var(--Jaini);
+    font-weight: lighter;
+}
+
+.menuDesktop{
+    display: none;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.container h2{
+    font-size: 2rem;
+}
+
+.container button{
+    font-size: 1.7rem;
+    color: #fff;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.container nav{
+    position: fixed;
+    top: 3.875rem;
+    right: -15.625rem;
+    background-color: #0E219E;
+    padding: 1rem;
+    height: 100%;
+    transition: .5s;
+}
+
+.container nav.open{
+    right: 0;
+}
+
+.container nav ul{
+    list-style: none;
+    color: #fff;
+}
+
+.container nav ul li{
+    padding: 1rem;
+}
+
+.container nav ul li a{ 
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+/* Fim do Menu Do Site */
+
+/* Seção de Notícia Principal */
+
+section.mainNews{
+    grid-area: mainNews;
+    border-bottom: 1px solid #0E219E;
+    padding: 1rem;
+}
+
+.trending{
+    display: flex;
+    padding: 1rem;
+    align-items: center;
+    justify-content: space-between;
+    font-family: var(--Jaini);
+    font-size: 1.5rem;
+    font-weight: lighter;
+}
+
+.trending h3{
+    color: #0E219E;
+}
+
+.news{
+    max-width: 80%;
+    margin: auto;
+    padding-top: 1rem;
+}
+
+.news h2{
+    font-family: var(--Jaini);
+    font-weight: lighter;
+    color: #0E219E;
+}
+
+.news .newsImage{
+    width: 100%;
+    max-width: 28.125rem;
+    height: auto;
+}
+
+.news .newsImage img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+}
+
+.news .newsContent{
+    padding-top: 1rem;
+    font-family: var(--Inika);
+}
+
+.newsContent p{
+    font-size: 1.2rem;
+    color: #333;
+    padding-top: 0.625rem;
+}
+
+
+
+.newsContent a{
+    text-decoration: none;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #333;
+    transition: .3s;
+}
+
+.newsContent a:hover{
+    color: #0E219E;
+}
+
+/* Fim da Seção de Notícia Principal */
+
+/* Seção das noticias mais lidas */
+
+section.mostRead{
+    grid-area: mostRead;
+    border-bottom: 1px solid #0E219E;
+}
+
+.mostRead{
+    padding: 1rem;
+    font-family: var(--Inika);
+    font-weight: lighter;
+}
+
+.mostRead h2{
+    color: #0E219E;
+    font-family: var(--Jaini);
+    font-weight: lighter;
+}
+
+.mostReadContent{
+    margin-top: 1rem;
+    font-family: var(--Inika);
+    border-top: 1px solid #ccc;
+    padding: 1rem;
+}
+
+.mostReadContent a{
+    text-decoration: none;
+    color: #0E219E;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: .3s;
+    
+}
+
+.mostReadContent a:hover{
+    color: #333;
+}
+
+/* Fim da Seção das noticias mais lidas */
+
+/* Inicio da seção das notícias recomendadas */
+
+section.recommended{
+    grid-area: recommended;
+    padding: 1rem;
+}
+
+.recommended h2{
+    font-family: var(--Jaini);
+    font-weight: lighter;
+    color: #0E219E;
+}
+
+.recommendedNews{
+    max-width: 80%;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.recommendedNews h2{
+    font-family: var(--Jaini);
+    font-weight: lighter;
+    color: #0E219E;
+}
+
+.recommendedNews .recommendedImage{
+    width: 100%;
+    max-width: 28.125rem;
+    height: 12.5rem;
+}
+
+.recommendedNews .recommendedImage img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+}
+
+.recommendedNews .recommendedContent{
+    padding-top: 1rem;
+    font-family: var(--Inika);
+    font-size: 1.2rem;
+}
+
+.recommendedNews .recommendedContent p{
+    font-size: 1.2rem;
+    color: #333;
+    padding-top: 0.625rem;
+}
+
+.recommendedNews .recommendedContent a{
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: #0E219E;
+    transition: .3s;
+    font-weight: bold;
+}
+
+.recommendedNews .recommendedContent a:hover{
+    color: #333;
+}
+
+/* Fim da seção das notícias recomendadas */
+
+/* Footer */
+
+footer{
+    background-color: #0E219E;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+    grid-area: footer;
+}
+
+footer p{
+    font-family: var(--Jaini);
+    font-weight: lighter;
+    font-size: 1.5rem;
+}
+
+/* Fim do Footer */
+
+/* Responsividade */
+
+@media screen and (min-width: 768px) {
+    .container nav, .container button{
+        display: none;
+    }
+
+    .menuDesktop{
+        display: block;
+        margin-top: 0.625rem;
+    }
+
+    .menuDesktop nav ul{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+
+    }
+
+    .menuDesktop nav ul li{
+        border-left: 1px solid #fff;
+        padding: 0.3125rem;
+        list-style: none;
+    }
+
+    .menuDesktop nav ul li a{
+        font-size: 1rem;
+        color: #fff;
+        text-decoration: none;
+        font-family: var(--Inika);
+        font-weight: lighter;
+    }
+
+    .menuDesktop nav ul li a:hover{
+        color: #ccc;
+    }
+
+    .menuDesktop nav ul li:first-child{
+        border-left: none;
+    }
+
+    .menuDesktop nav ul li:last-child{
+        border-right: none;
+    }
+
+    main{
+        padding-top: 5rem;
+    }
+
+    .news{
+        margin: 0 auto;
+        max-width: 100%;
+    }
+
+    
+    .news .newsImage{
+        width: 100%;
+        max-width: 30rem;
+        height: auto;
+    }
+
+    .recommendedNews{
+        max-width: 100%;
+    }
+    
+
+}
+
+@media screen and (min-width: 1024px){
+    .news{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        max-width: 100%;
+    }
+
+    .news .newsContent{
+        width: 50%;
+    }
+}
